@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Bundle Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+    --primary-color: #A0522D; 
+    --secondary-color: #D2B48C; 
+    --text-color: #333;
+    --light-grey: #f4f4f4;
+    --dark-grey: #555;
+    --white: #fff;
+    --black: #000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        @media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+    .main-nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+
+    h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+    .main-nav ul li {
+        margin: 0 15px 10px;
+    }
+
+    .header-icons {
+        margin-top: 20px;
+    }
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-price span {
+    font-size: 1.8em;
+    color: #b12704; /* A common e-commerce price color */
+    font-weight: bold;
+}
+
+.product-options {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-options label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.product-options select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.add-to-cart-btn {
+    background-color: #007bff; /* A typical blue for buttons */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+.main-header {
+    background-color: palevioletred;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--light-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--dark-grey);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icons a {
+    color: var(--dark-grey);
+    font-size: 1.2em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.7em;
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+}
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="#">Human Hair</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="humanhair.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="bundles.html">Bundles</a></li>
+                <li class="nav-item"><a class="nav-link" href="wigs.html">Wigs</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="user.html"><i class="fas fa-user"></i></a>
+                <a href="shopping.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="product-card" id="hairBundleProduct">
+        <div class="product-image">
+            <img src="https://via.placeholder.com/300x300?text=Hair+Bundle" alt="Deep Wave Hair Bundle">
+        </div>
+        <div class="product-details">
+            <h2 class="product-title">Luxury Deep Wave Bundle</h2>
+            <p class="product-description">
+                Experience the ultimate in luxury with our 100% Virgin Brazilian Deep Wave hair.
+                Soft, bouncy, and lustrous, perfect for a full and glamorous look.
+                Available in various lengths.
+            </p>
+            <div class="product-price">
+                <span>$85.00</span>
+                </div>
+            <div class="product-options">
+                <label for="length-select">Length:</label>
+                <select id="length-select">
+                    <option value="12">12 inches</option>
+                    <option value="14">14 inches</option>
+                    <option value="16">16 inches</option>
+                    <option value="18">18 inches</option>
+                    <option value="20">20 inches</option>
+                    <option value="22">22 inches</option>
+                </select>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

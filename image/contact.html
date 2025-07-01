@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+  
+ /* General Body and Main Layout */
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f0f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+.announcement-bar .announcement-link {
+    color: #FFD700; /* Gold */
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.announcement-bar .announcement-link:hover {
+    text-decoration: underline;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* Makes the header stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+}
+
+.header-left .logo img {
+    height: 30px; /* Adjust logo size */
+}
+
+.header-center {
+    flex-grow: 1; /* Allows search bar to take available space */
+    display: flex; /* For centering content in the middle */
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 400px; /* Limit search bar width */
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.header-right .header-icon-link {
+    font-size: 1.4em;
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.header-right .header-icon-link .cart-count {
+    background-color: #FFD700; /* Gold */
+    color: #333;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    line-height: 1; /* Prevents extra space in small circles */
+}
+
+/* Hide mobile search icon on larger screens */
+.mobile-search-icon {
+    display: none;
+}
+
+.container-melt {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 1rem; /* Apply rounded corners to the container */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container-melt h2{
+   font-size: 60px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   color: #3065f7;
+   text-align: center;
+
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 0.5rem; /* Apply rounded corners to input fields */
+    font-size: 1rem;
+    color: #374151; /* Dark gray text */
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4f46e5; /* Indigo focus border */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Soft focus shadow */
+}
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #4f46e5; /* Indigo background */
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3); /* Button shadow */
+}
+button:hover {
+    background-color: #4338ca; /* Darker indigo on hover */
+    transform: translateY(-1px);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(79, 70, 229, 0.2);
+}
+.error-message {
+    color: #ef4444; /* Red for error messages */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+.message-box {
+    background-color: #ecfdf5; /* Light green background for success */
+    border: 1px solid #34d399; /* Green border */
+    color: #065f46; /* Dark green text */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    display: none; /* Hidden by default */
+    text-align: center;
+}
+.message-box.error {
+    background-color: #fee2e2; /* Light red background for error */
+    border-color: #f87171; /* Red border */
+    color: #991b1b; /* Dark red text */
+}
+</style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <span>All Wigs $89 | Limited Time Offer <a href="get-now" class="announcement-link">Get Now</a></span>
+    </div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="menu-toggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="logo" class="logo">
+                    <img src="files/afro.jpg" alt="UNice Logo">HUMAN HAIR
+                </a>
+            </div>
+            <div class="header-center">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="search" class="header-icon-link" aria-label="Search">
+                    <i class="fas fa-search mobile-search-icon"></i>
+                </a>
+                <a href="#" class="header-icon-link" aria-label="User Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="Add-to-cart" class="header-icon-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#" class="header-icon-link" aria-label="Language/Region">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-melt">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Contact Us</h2>
+        <form id="contactForm" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Your Name" required>
+                <p id="nameError" class="error-message"></p>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="your.email@example.com" required>
+                <p id="emailError" class="error-message"></p>
+            </div>
+            <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                <input type="text" id="subject" name="subject" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Subject of your message" required>
+                <p id="subjectError" class="error-message"></p>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea id="message" name="message" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Your message here..." required></textarea >
+                <p id="messageError" class="error-message"></p>
+            </div>
+            <div>
+                <button type="submit" class="w-full">Send Message</button>
+            </div>
+        </form>
+        <div id="responseMessage" class="message-box"></div>
+    </div>
+</body>
+</html>

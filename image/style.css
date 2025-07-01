@@ -1,0 +1,300 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Prevent body scroll when menu is active */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+.announcement-bar .announcement-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.announcement-bar .announcement-link:hover {
+    text-decoration: underline;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Menu Button (visible on mobile, hidden on desktop) */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+    display: none; /* Hidden by default, show in media query */
+}
+
+.header-left .logo img {
+    height: 30px;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Desktop Search Bar */
+.search-bar.desktop-search {
+    display: flex; /* Visible by default */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar.desktop-search input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.search-bar.desktop-search button {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+}
+
+/* Desktop Header Icons */
+.header-right.desktop-icons {
+    display: flex; /* Visible by default */
+}
+
+.header-right .header-icon-link {
+    font-size: 1.4em;
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.header-right .header-icon-link .cart-count {
+    background-color: #FFD700;
+    color: #333;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    line-height: 1;
+}
+
+/* Off-Canvas Menu Box */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Width of the menu */
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(-100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100; /* Above header */
+    display: flex;
+    flex-direction: column;
+}
+
+.off-canvas-menu.active {
+    transform: translateX(0); /* Show menu */
+}
+
+/* Menu Header (Top section with "Hello, Sign in") */
+.menu-header {
+    background-color: #232f3e; /* Dark background like Amazon */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning the close button */
+    padding-right: 50px; /* Space for close button */
+}
+
+.menu-header .fas.fa-user-circle {
+    font-size: 2.2em; /* Larger user icon */
+    margin-right: 15px;
+    color: #FFD700; /* Gold color for consistency */
+}
+
+.menu-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #fff; /* White close button on dark header */
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Menu Sections Wrapper (for scrolling content) */
+.menu-sections-wrapper {
+    flex-grow: 1; /* Allows this wrapper to take remaining height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-bottom: 20px; /* Space at the bottom for scrolling */
+}
+
+/* Individual Menu Sections */
+.menu-section {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Separator lines */
+}
+
+.menu-section:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+.menu-section h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-section li {
+    margin-bottom: 5px;
+}
+
+.menu-section li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1em;
+    padding: 10px 0;
+    display: flex; /* For aligning text and chevron */
+    align-items: center;
+    justify-content: space-between; /* Push chevron to right */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-section li a:hover {
+    color: #000;
+    background-color: #f8f8f8; /* Light hover background */
+}
+
+.menu-section li a i {
+    font-size: 0.9em;
+    color: #777;
+    margin-left: 10px; /* Space between text and icon */
+}
+
+/* Overlay to dim background */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+h1, h2, h3 {
+    color: #000;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+p {
+    margin-bottom: 1em;
+}
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+a {
+    color: #FFD700; /* Example accent color, adjust to your brand */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.last-updated {
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}

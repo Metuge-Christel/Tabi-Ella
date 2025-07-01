@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Refund Policy</title>
+    <style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Prevent body scroll when menu is active */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+.announcement-bar .announcement-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.announcement-bar .announcement-link:hover {
+    text-decoration: underline;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Menu Button (visible on mobile, hidden on desktop) */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+    display: none; /* Hidden by default, show in media query */
+}
+
+.header-left .logo img {
+    height: 30px;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Desktop Search Bar */
+.search-bar.desktop-search {
+    display: flex; /* Visible by default */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar.desktop-search input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.search-bar.desktop-search button {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+}
+
+/* Desktop Header Icons */
+.header-right.desktop-icons {
+    display: flex; /* Visible by default */
+}
+
+.header-right .header-icon-link {
+    font-size: 1.4em;
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.header-right .header-icon-link .cart-count {
+    background-color: #FFD700;
+    color: #333;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    line-height: 1;
+}
+
+/* Off-Canvas Menu Box */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Width of the menu */
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(-100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100; /* Above header */
+    display: flex;
+    flex-direction: column;
+}
+
+.off-canvas-menu.active {
+    transform: translateX(0); /* Show menu */
+}
+
+/* Menu Header (Top section with "Hello, Sign in") */
+.menu-header {
+    background-color: #232f3e; /* Dark background like Amazon */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning the close button */
+    padding-right: 50px; /* Space for close button */
+}
+
+.menu-header .fas.fa-user-circle {
+    font-size: 2.2em; /* Larger user icon */
+    margin-right: 15px;
+    color: #FFD700; /* Gold color for consistency */
+}
+
+.menu-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #fff; /* White close button on dark header */
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Menu Sections Wrapper (for scrolling content) */
+.menu-sections-wrapper {
+    flex-grow: 1; /* Allows this wrapper to take remaining height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-bottom: 20px; /* Space at the bottom for scrolling */
+}
+
+/* Individual Menu Sections */
+.menu-section {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Separator lines */
+}
+
+.menu-section:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+.menu-section h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-section li {
+    margin-bottom: 5px;
+}
+
+.menu-section li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1em;
+    padding: 10px 0;
+    display: flex; /* For aligning text and chevron */
+    align-items: center;
+    justify-content: space-between; /* Push chevron to right */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-section li a:hover {
+    color: #000;
+    background-color: #f8f8f8; /* Light hover background */
+}
+
+.menu-section li a i {
+    font-size: 0.9em;
+    color: #777;
+    margin-left: 10px; /* Space between text and icon */
+}
+
+/* Overlay to dim background */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+        h1, h2, h3 {
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        strong {
+            font-weight: bold;
+        }
+        em {
+            font-style: italic;
+        }
+        a {
+            color: #FFD700; /* Example accent color, adjust to your brand */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            text-align: right;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="announcement-bar">
+        <span>All Wigs $89 | Limited Time Offer <a href="#" class="announcement-link">Get Now</a></span>
+    </div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="menu-toggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="logo">
+                    <img src="files/logo.jpg" alt="UNice Logo">
+                </a>
+            </div>
+            <div class="header-center">
+                <div class="search-bar desktop-search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="header-right desktop-icons">
+                <a href="#" class="header-icon-link" aria-label="User Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="header-icon-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#" class="header-icon-link" aria-label="Language/Region">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="off-canvas-menu">
+        <div class="menu-header">
+            <i class="fas fa-user-circle"></i> <h2>Hello, Sign in</h2>
+            <button class="close-menu-btn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="menu-sections-wrapper">
+            <div class="menu-section">
+                <h3>Digital Content & Devices</h3>
+                <ul>
+                    <li><a href="#">Prime Video <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Amazon Music <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Kindle E-readers & Books <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Amazon Appstore <i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="menu-section">
+                <h3>Shop by Department</h3>
+                <ul>
+                    <li><a href="#">Electronics <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Computers <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Smart Home <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Arts & Crafts <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">See all <i class="fas fa-chevron-down"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="menu-section">
+                <h3>Programs & Features</h3>
+                <ul>
+                    <li><a href="#">Gift Cards <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Shop By Interest <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">Amazon Live <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">International Shopping <i class="fas fa-chevron-right"></i></a></li>
+                    <li><a href="#">See all <i class="fas fa-chevron-down"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="menu-section">
+                <h3>Help & Settings</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">United States</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="refund-policy.html">Refund Policy</a></li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay"></div>
+
+    <div class="marg2">
+    <h1>Refund Policy</h1>
+    <p class="last-updated">Last Updated: June 28, 2025</p>
+
+    <p>At <strong>ELLA'S HUMAN HAIR</strong>, we strive to ensure your complete satisfaction with your human hair wigs, bundles, extensions, and hair care products. If you are not entirely satisfied with your purchase, we're here to help.</p>
+
+    <h2>1. Eligibility for Returns & Refunds</h2>
+    <p>To be eligible for a return and refund, your item must meet the following conditions:</p>
+    <ul>
+        <li><strong>Time Limit:</strong> Returns must be initiated within <strong>[Number] days</strong> (e.g., 7, 14, 30 days) of the delivery date.</li>
+        <li><strong>Condition:</strong> The item must be unused, unaltered, and in the same condition that you received it. This includes:
+            <ul>
+                <li>The hair must be unworn, unwashed, uncut, and untampered with.</li>
+                <li>Lace must be uncut and undamaged.</li>
+                <li>Original tags, bands, and packaging must be intact and attached.</li>
+                <li>Any included gifts or accessories must also be returned.</li>
+            </ul>
+        </li>
+        <li><strong>Original Packaging:</strong> The item must be in its original packaging.</li>
+        <li><strong>Proof of Purchase:</strong> You must have the receipt or proof of purchase.</li>
+    </ul>
+    <p><strong>Non-Returnable Items:</strong></p>
+    <ul>
+        <li>Gift cards.</li>
+        <li>Downloadable software products.</li>
+        <li>Some health and personal care items (e.g., opened hair styling tools, used hair care products due to hygiene reasons, unless defective).</li>
+        <li>Items explicitly marked as final sale or non-returnable at the time of purchase.</li>
+        <li>Custom-made or personalized wigs/units (unless defective or incorrect).</li>
+    </ul>
+
+    <h2>2. How to Initiate a Return</h2>
+    <p>To initiate a return, please follow these steps:</p>
+    <ol>
+        <li>Contact our customer service team at <strong>Your Support Email Address</strong> within the eligible return window.</li>
+        <li>Provide your order number, the item(s) you wish to return, and the reason for the return.</li>
+        <li>Our team will review your request and, if approved, provide you with a Return Authorization (RA) number and detailed instructions on how to send back your item.</li>
+        <li>Please do not send your item back before receiving an RA number, as it may not be processed.</li>
+    </ol>
+
+    <h2>3. Shipping Returns</h2>
+    <ul>
+        <li>You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable.</li>
+        <li>If you receive a refund, the cost of return shipping may be deducted from your refund, depending on the reason for return (e.g., if it's not our error).</li>
+        <li>For high-value items, we recommend using a trackable shipping service or purchasing shipping insurance. We don’t guarantee that we will receive your returned item.</li>
+        <li>If the return is due to our error (e.g., wrong item shipped, defective product), we will provide a prepaid return label or reimburse the return shipping costs.</li>
+    </ul>
+
+    <h2>4. Refunds (Once Your Return is Received)</h2>
+    <p>Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.</p>
+    <ul>
+        <li>If approved, your refund will be processed, and a credit will automatically be applied to your original method of payment, within a certain number of days (e.g., 5-10 business days).</li>
+        <li><strong>Partial Refunds:</strong> There are certain situations where only partial refunds are granted (if applicable):
+            <ul>
+                <li>Any item not in its original condition, is damaged or missing parts for reasons not due to our error.</li>
+                <li>Any item that is returned more than [Number] days after delivery.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>5. Late or Missing Refunds (If Applicable)</h2>
+    <p>If you haven’t received a refund yet, first check your bank account again.</p>
+    <p>Then contact your credit card company, it may take some time before your refund is officially posted. Next contact your bank. There is often some processing time before a refund is posted.</p>
+    <p>If you’ve done all of this and you still have not received your refund yet, please contact us at [<strong>Your Support Email Address</strong>].</p>
+
+    <h2>6. Exchanges (If Applicable)</h2>
+    <p>We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at [<strong>Your Support Email Address</strong>] and we will provide instructions.</p>
+    <p>For exchanges due to sizing, color, or style preferences, you will typically need to return the original item for a refund and place a new order for the desired item.</p>
+
+    <h2>7. Damaged or Defective Items</h2>
+    <p>If you receive a damaged or defective item, please contact us immediately (within [Number, e.g., 2-3] days of receipt) with photos or videos of the damage/defect and your order number. We will work with you to resolve the issue promptly, which may include a replacement or full refund, including return shipping costs.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have any questions about our Refund Policy, please contact us:</p>
+    <p>
+        <strong style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 30px;">
+            Ella's Human Hair</strong><br>
+            Mayor Street<br>
+            Buea<br>
+            Cameroon<br>
+            Email: tabichristel2@gmail.com<br>
+            Phone: +237 674 204 428<br>
+    </p>
+</div>
+</body>
+</html>

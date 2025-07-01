@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+:root {
+    --primary-color: #A0522D; 
+    --secondary-color: #D2B48C; 
+    --text-color: #333;
+    --light-grey: #f4f4f4;
+    --dark-grey: #555;
+    --white: #fff;
+    --black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f425f4;
+}
+     .main-header {
+    background-color: palevioletred;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--light-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.main-nav ul li a {
+    color: var(--dark-grey);
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.header-icons a {
+    color: var(--dark-grey);
+    font-size: 1.2em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.7em;
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+        /* Container for content */
+        .container-mine {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        header h1 {
+            color: #8b4513; /* A warm, hair-like color */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Section Styling */
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .about-section h2 {
+            color: #5a2c00; /* Darker shade for headings */
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #8b4513;
+            padding-bottom: 5px;
+            display: inline-block; /* To make the border only as wide as the text */
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+        }
+
+        /* Highlighted text or values */
+        .highlight {
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        /* Team/Values section styling (optional) */
+        .values-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .values-list li {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1; /* Allows items to grow and shrink */
+            min-width: 280px; /* Minimum width for each value box */
+            max-width: 45%; /* Max width to allow two columns */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            text-align: center;
+        }
+
+        .values-list li h3 {
+            color: #5a2c00;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .values-list li {
+                max-width: 100%; /* Stack items on small screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="#">Human Hair</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="humanhair.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="bundles.html">Bundles</a></li>
+                <li class="nav-item"><a class="nav-link" href="wigs.html">Wigs</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="user.html"><i class="fas fa-user"></i></a>
+                <a href="shopping.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-mine">
+        <header>
+            <h1>About Us</h1>
+            <p>Your Trusted Source for Premium Human Hair Extensions</p>
+        </header>
+
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <p>Welcome to <span class="highlight">[Your Company Name]</span>! We are passionate about providing the highest quality human hair extensions to empower individuals to express their unique beauty and confidence. Our journey began with a simple vision: to offer luxurious, durable, and natural-looking hair that exceeds expectations.</p>
+            <p>From humble beginnings, we have grown into a leading provider, driven by a commitment to ethical sourcing, meticulous craftsmanship, and unparalleled customer satisfaction. We understand that hair is more than just an accessory; it's an extension of your personality.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to consistently deliver <span class="highlight">premium 100% virgin human hair</span> that enhances natural beauty and instills confidence. We strive to be the go-to destination for stylists and individuals seeking top-tier hair products, backed by exceptional service and a dedication to quality that speaks for itself.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>What Sets Us Apart</h2>
+            <p>At <span class="highlight">Christel's Lush Hair</span>, we believe in the details that make a difference:</p>
+            <ul class="values-list">
+                <li>
+                    <h3>Uncompromising Quality</h3>
+                    <p>We meticulously select and inspect every bundle of hair to ensure it meets our rigorous standards for softness, luster, and longevity. Our hair is free from synthetic fibers and chemical processing.</p>
+                </li>
+                <li>
+                    <h3>Ethical Sourcing</h3>
+                    <p>We are committed to responsible and ethical sourcing practices, ensuring that our hair is obtained in a way that respects donors and communities.</p>
+                </li>
+                <li>
+                    <h3>Variety and Versatility</h3>
+                    <p>Discover a wide range of textures, lengths, and colors to suit every style and occasion, from silky straight to bouncy curls.</p>
+                </li>
+                <li>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Your happiness is our priority. We offer personalized support and a seamless shopping experience, ensuring you find the perfect hair for your needs.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Commitment to You</h2>
+            <p>We are dedicated to building lasting relationships with our customers. When you choose <span class="highlight">[Your Company Name]</span>, you're not just purchasing hair; you're investing in quality, trust, and a brand that truly cares about your beauty journey.</p>
+            <p>Thank you for choosing us to be a part of your transformation.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Christel's Lush Human Hair. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
